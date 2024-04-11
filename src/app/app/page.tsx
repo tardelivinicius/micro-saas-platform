@@ -1,13 +1,29 @@
-
-import { auth } from "../services/auth"
-import { UserInfo } from "./_components/user-info"
-
-
-export default async function Page() {
-    const session = await auth()
+import {
+    DashboardPage,
+    DashboardPageHeader,
+    DashboardPageHeaderNav,
+    DashboardPageHeaderTitle,
+    DashboardPageMain,
+  } from '@/components/dashboard/page'
+  import { Button } from '@/components/ui/button'
+  import { PlusIcon } from '@radix-ui/react-icons'
+  
+  export default async function Page() {
+  
     return (
-        <main className="flex items-center justify-center h-screen">
-            <UserInfo user={session?.user} />
-        </main>
+      <DashboardPage>
+        <DashboardPageHeader>
+          <DashboardPageHeaderTitle>Tarefas</DashboardPageHeaderTitle>
+          <DashboardPageHeaderNav>
+            <DashboardPageHeaderNav>
+              teste
+            </DashboardPageHeaderNav>
+          </DashboardPageHeaderNav>
+        </DashboardPageHeader>
+        <DashboardPageMain>
+          {/* <TodoDataTable data={todos} /> */}
+          teste
+        </DashboardPageMain>
+      </DashboardPage>
     )
-}
+  }
